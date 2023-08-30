@@ -26,6 +26,8 @@ return new class extends Migration
             $table->float('harga',10,2)
                     ->nullable(false);
             
+            $table->integer('stok',false)
+                    ->nullable(false)->default(0);
             $table->timestamps();
             //Foreign Key
             $table->foreign('id_barang')->on('barang')
