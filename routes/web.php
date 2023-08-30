@@ -20,4 +20,6 @@ Route::get('/', function () {
 
 Route::prefix('/dashboard')->group(function(){
     Route::get('/perusahaan',[PerusahaanController::class,'index']);
+    Route::get('/perusahaan/edit',[PerusahaanController::class,'edit']);
+    Route::post('/perusahaan/simpan',[PerusahaanController::class,'simpan']);
 });
