@@ -13,5 +13,8 @@ class Cabang extends Model
     protected $table = 'cabang';
     protected $primaryKey = 'id_cabang';
     public $timestamps = false;
-    protected $fillable = ['id_perusahaan','nama_cabang','alamat'];
+    protected $fillable = [
+                            'id_perusahaan','nama_cabang',
+                            'alamat','kode_cabang','penanggung_jawab'
+                        ];
 }

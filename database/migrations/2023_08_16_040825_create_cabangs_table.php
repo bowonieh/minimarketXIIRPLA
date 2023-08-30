@@ -15,6 +15,8 @@ return new class extends Migration
             $table->integer('id_cabang',true)->nullable(false);
             $table->integer('id_perusahaan',false)->index('FkIdPerusahaan');
             $table->string('nama_cabang',100)->nullable(false);
+            $table->string('kode_cabang',100)->nullable(false);
+            $table->string('penanggung_jawab',100)->nullable(false);
             $table->text('alamat');
 
             //Foreign Key

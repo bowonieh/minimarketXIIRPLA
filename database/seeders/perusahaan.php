@@ -14,6 +14,7 @@ class perusahaan extends Seeder
     public function run(): void
     {
         //
-        AppPerusahaan::factory(1)->create();
+        AppPerusahaan::factory(1)
+            ->create();
     }
 }
