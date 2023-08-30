@@ -18,8 +18,9 @@ class PerusahaanFactory extends Factory
     {
         return [
             //
-            'nama_perusahaan' => fake('id')->company(),
-            'alamat'            => fake('id')->address()
+            
+            'nama_perusahaan' => "PT. INDOMARCO TBK",
+            'alamat'            => fake('id_ID')->address()
         ];
     }
 }
