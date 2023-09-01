@@ -19,8 +19,9 @@ class AuthFactory extends Factory
     {
         return [
             //
-            'username' => fake('id')->userName(),
+            'username' => fake('id_ID')->userName(),
             'password' => Hash::make('123456'),
+            //'role'     => 'admin'
             'role'     => 'admin'
         ];
     }

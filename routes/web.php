@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CabangController;
 use App\Http\Controllers\PerusahaanController;
 use Illuminate\Support\Facades\Route;
@@ -18,8 +19,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::prefix('/dashboard')->group(function(){
+//Buat Route untuk  menampilkan form login dengan nama route 'login'
+Route::get('/login',[AuthController::class,'index'])->name('login');
+//POST LOGIN untuk check password
+Route::post('/login',[AuthController::class,'check']);
+//ROUTE LOGOUT
+Route::get('/logout',[AuthController::class,'logout']);
+//=================
+Route::prefix('/dashboard')
+    ->middleware(['auth','isAdmin'])
+    ->group(function(){
     Route::get('/perusahaan',[PerusahaanController::class,'index']);
     Route::get('/perusahaan/edit',[PerusahaanController::class,'edit']);
     Route::post('/perusahaan/simpan',[PerusahaanController::class,'simpan']);
