@@ -12,7 +12,7 @@ class BarangController extends Controller
      */
     public function index()
     {
-        //
+        //Tampilkan List Barang
     }
 
     /**
